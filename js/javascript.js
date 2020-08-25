@@ -157,3 +157,6 @@ function exe() {
 	changeValue()
 	finalPassword = []; // Gør så at der ikke bliver tilføjet et password til det forrige. Men i stedet bare laver et nyt password.
 }
+
+
+// Making new change
