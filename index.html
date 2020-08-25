@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://vezit.dk">vezit</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="http://vezit.dk/index.php">Home</a></li>
+      <li class="active"><a href="#">Password Generator</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+	<div class="page-header">
+		<h1>Velkommen til Vezit's password generator eventyr</h1>      
+	</div>
+	<p>Velkommen til dette hjørne af mit domæne. Denne side kan generer passwords. Længere nede på siden beskriver jeg hvordan koden som generer passwords er skruet sammen Og hvad min tankegang med koden var; blandandet at koden er skrevet i ren Javascript. Hvilket betyder at jeg selv har skrevet funktionerne som generer passwords. Velkommen!</p>      
+	<p>Jeg skriver bare hvad jeg tænker, og jeg tænker ikke over stavefejl, så bær over med mig. Indtil jeg får det rettet. Det er ikke min højeste prioritet.</p>      
+</div>
+
+<div class="container">
+    <div class="jumbotron">
+		<div class="container" id="cssCheckmarks">
+			<select id="TestID">
+				<optgroup label="Weak">
+					<option id="8">8</option>	
+					<option id="12">12</option>		
+				</optgroup>
+				<optgroup label="Strong">
+					<option id="16">16</option>
+					<option id="20">20</option>
+					<option id="24">24</option>	
+					<option id="28" selected>28</option>  <!--selected betyder bare at det er den værdi som bliver vist når bruger læser siden første gang.-->
+					<option id="32">32</option>
+				</optgroup>
+				<optgroup label="Insane">
+					<option id="64">64</option>
+					<option id="128">128</option>
+					<option id="256">256</option>
+				</optgroup>	
+			</select>
+			<div>
+			<!--type; er input typen. id bruges til at genkende input elementet. onclick er hvad der skal ske når man trykker på functionen. -->
+				Tal: <input type="checkbox" id="NumberOnOffCheck" checked>
+			</div>
+			<div>
+				Capital bugstaver: <input type="checkbox" id="CapOnOffCheck" checked>
+			</div>
+			<div>
+				Ekskluder (i,l,1,0,o) <input type="checkbox" id="ExcludeOnOffCheck" checked>
+			</div>
+		</div>
+		<div class="container" id="cssCenter">
+			<h2><button onclick="exe()">Generer Kode</button></h2>
+			<input type="text" id="password" size="30" value="Dit password kommer her"></input>
+		</div>  
+	</div>   
+</div>
+
+<div class="container">
+	<h2>Dokumentation</h2>
+	<p>Beskrivelse af koden: Jeg har lavet koden fra bunden af i javascript. Bortset fra at jeg har fundet noget kode som er skrevet i javascript som generere hele alphabetet. Denne dokumentations formål er at hjælpe mig med at nemt forstå hvordan koden hænger sammen. Så det som jeg har lært i javascript, html, css og bootstrap. Nemmere kan indhentes til en anden gang. Jeg vil forsøge at beskrive koden i detaljer både teknisk og hvorfor at jeg har valgt at skrive de funktioner de funktioner som jeg har. Når man går i gang med at lave sådan et projekt her finder man nemlig hurtigt ud af at hvis man ikke er omhyggelig så vil det endelige produkt indeholde fejl og være ufuldendt.</p>
+	<h3>Beskrivelse af funktionaliteten</h3>
+	<p>En bruger kan vælge at generare en kode. Han har mulighed for at vælge om der skal være tal, store bugstaver med. Brugeren har også mulighed for at vælge hvor langt passwordet skal være samt ekskluderer forvirrende karakterer såsom store ”i” og lille ”l”.</p>
+	<p>For at opnå tilfældig i genereringen af passwordet bruger jeg javascripts indbyggede pseudu tilfældighedsfunktion. En funktion som ikke har entropi, hvilket er noget eksperterne på stackoverflow whiner over. Så jeg vil ikke anbefale at generer passwords fra denne side til ting skal være af højt sikkerheds niveau. Når det så er sagt, så forgår alt programmel på brugerens egen computer, fordi det er skrevet i javascript.</p>
+</div>
+
+
+	<!--Egen noob kode-->
+	<script src="js/javascript.js"></script>
+	<script>
+	exe(); // starter automatisk når siden åbnes.
+	</script>
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+</body>
+</html>
